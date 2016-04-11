@@ -16,21 +16,21 @@ namespace Problem.ProjectEuler
 
         public override void Answer()
         {
-            int answer = 0;
+            ulong answer = 0;
 
             answer = Find(1000000);
 
             PrintAnswer(answer.ToString());
         }
 
-        private int Find(int maxValue)
+        private ulong Find(ulong maxValue)
         {
-            int returnValue = 0;
-            long maxCount = long.MinValue;
+            ulong returnValue = 0;
+            ulong maxCount = ulong.MinValue;
 
-            for (int i = 1; i <= maxValue; ++i)
+            for (ulong i = 1; i <= maxValue; ++i)
             {
-                long count = CollatzConjecture(i);
+                ulong count = CollatzConjecture(i);
                 if (maxCount < count)
                 {
                     returnValue = i;
@@ -41,10 +41,10 @@ namespace Problem.ProjectEuler
             return returnValue;
         }
 
-        private long CollatzConjecture(int hailstoneSequence)
+        private ulong CollatzConjecture(ulong hailstoneSequence)
         {
-            long returnValue = 0;
-            int compute = hailstoneSequence;
+            ulong returnValue = 0;
+            ulong compute = hailstoneSequence;
 
             while (compute > 1)
             {
