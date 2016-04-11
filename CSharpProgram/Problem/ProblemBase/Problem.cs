@@ -4,42 +4,34 @@ namespace Problem
 {
     abstract class Problem : IProblem
     {
-        private int m_ProblemNum = 0;
+        private EProblemType mProblemType;
+        private int mProblemNum = 0;
 
-        public Problem(int pProblemNum)
+        public Problem(EProblemType type, int pProblemNum)
         {
-            m_ProblemNum = pProblemNum;
+            mProblemType = type;
+            mProblemNum = pProblemNum;
         }
 
-        public abstract void Question();
-        public abstract void Answer();
-
-        protected void PrintQuestion(string pQuestion)
+        public void Question()
         {
-            Console.WriteLine(string.Format("No.{0} Q]\n\n{1}\n", m_ProblemNum.ToString("0000"), pQuestion));
-        }
+            Data.Table.SProblemDataUnit dataUnit = new Data.Table.SProblemDataUnit();
 
-        protected void PrintQuestion(string[] pQuestion)
-        {
-            string question = "";
-
-            for (int i = 0; i < pQuestion.Length; ++i)
+            switch ( mProblemType )
             {
-                if (i == 0)
-                {
-                    question += pQuestion[i];
-                }
-                else
-                {
-                    question += "\n" + pQuestion[i];
-                }
+                case EProblemType.PROJECT_EULER:
+                    dataUnit = Singleton<Data.Table.ProjectEulerDataTable>.Instance.GetDataByIndex(mProblemNum);
+                    break;
             }
-            PrintQuestion(question);
+
+            Console.WriteLine(string.Format("No.{0} Q] {1}\n\n{2}\n", dataUnit.ProblemIndex.ToString("0000"), dataUnit.ProblemTitle, dataUnit.ProblemQuestion));
         }
 
+        public abstract void Answer();
+        
         protected void PrintAnswer(string pAnswer)
         {
-            Console.WriteLine(string.Format("No.{0} A] {1}\n", m_ProblemNum.ToString("0000"), pAnswer));
+            Console.WriteLine(string.Format("No.{0} A] {1}\n", mProblemNum.ToString("0000"), pAnswer));
         }
     }
 }

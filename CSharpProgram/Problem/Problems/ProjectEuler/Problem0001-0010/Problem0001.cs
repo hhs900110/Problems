@@ -5,18 +5,8 @@ namespace Problem.ProjectEuler
 {
     class Problem0001 : Problem
     {
-        private readonly string[] kQuestion = new string[] {
-            "10보다 작은 자연수 중에서 3 또는 5의 배수는 3, 5, 6, 9 이고,",
-            "이것을 모두 더하면 23입니다.",
-            "1000보다 작은 자연수 중에서 3 또는 5의 배수를 모두 더하면 얼마일까요?" };
-
-        public Problem0001() : base(1) { }
-
-        public override void Question()
-        {
-            PrintQuestion(kQuestion);
-        }
-
+        public Problem0001() : base(EProblemType.PROJECT_EULER, 1) { }
+        
         public override void Answer()
         {
             int answer = 0;

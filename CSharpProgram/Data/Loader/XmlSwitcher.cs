@@ -61,7 +61,7 @@ public class XMLSwitcher
     Application.temporaryCachePath	: /var/mobile/Applications/프로그램ID/Library/Caches
     */
 
-    public static string ASSET_PATH = "Data\\Xml\\";
+    public static string ASSET_PATH = "..\\..\\Data\\Xml\\";
     public const short kLoadCountReader = 2000;
 
     public static IEnumerator AsyncFileLoading(string strFilePath, System.Action<MemoryStream> result = null)
@@ -130,10 +130,10 @@ public class XMLSwitcher
             Debugger.LogWarning("Have '.xml'  : " + xmlFileName);
             xmlFileName = xmlFileName.Replace(".xml", "");
         }
-        if (xmlFileName.Contains("Data_KOR\\"))
+        if (xmlFileName.Contains(ASSET_PATH) )
         {
-            Debugger.LogWarning("Have 'Data_KOR\\'  : " + xmlFileName);
-            xmlFileName = xmlFileName.Replace("Data_KOR\\", "");
+            Debugger.LogWarning("Have 'Data\\Xml\\'  : " + xmlFileName);
+            xmlFileName = xmlFileName.Replace(ASSET_PATH, "");
         }
         return xmlFileName;
     }

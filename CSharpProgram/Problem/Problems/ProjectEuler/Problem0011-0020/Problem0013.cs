@@ -5,9 +5,6 @@ namespace Problem.ProjectEuler
 {
     class Problem0013 : Problem
     {
-        private readonly string[] kQuestion = new string[] {
-            "아래에 50자리 숫자가 100개 있습니다. 이것을 모두 더한 값의 첫 10자리는 얼마입니까?" };
-
         /*
         37107287533902102798797998220837590246510135740250
         46376937677490009712648124896970078050417018260538
@@ -111,13 +108,8 @@ namespace Problem.ProjectEuler
         53503534226472524250874054075591789781264330331690
          */
 
-        public Problem0013() : base(13) { }
-
-        public override void Question()
-        {
-            PrintQuestion(kQuestion);
-        }
-
+        public Problem0013() : base(EProblemType.PROJECT_EULER, 13) { }
+        
         public override void Answer()
         {
             int answer = 0;

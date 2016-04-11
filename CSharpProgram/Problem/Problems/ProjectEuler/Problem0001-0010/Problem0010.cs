@@ -5,17 +5,8 @@ namespace Problem.ProjectEuler
 {
     class Problem0010 : Problem
     {
-        private readonly string[] kQuestion = new string[] {
-            "10 이하의 소수를 모두 더하면 2 + 3 + 5 + 7 = 17 이 됩니다.",
-            "이백만(2,000,000) 이하 소수의 합은 얼마입니까?" };
-
-        public Problem0010() : base(10) { }
-
-        public override void Question()
-        {
-            PrintQuestion(kQuestion);
-        }
-
+        public Problem0010() : base(EProblemType.PROJECT_EULER, 10) { }
+        
         public override void Answer()
         {
             ulong answer = 0;

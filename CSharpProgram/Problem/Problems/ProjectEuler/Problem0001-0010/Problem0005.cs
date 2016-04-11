@@ -5,17 +5,8 @@ namespace Problem.ProjectEuler
 {
     class Problem0005 : Problem
     {
-        private readonly string[] kQuestion = new string[] {
-            "1 ~ 10 사이의 어떤 수로도 나누어 떨어지는 가장 작은 수는 2520입니다.",
-            "그러면 1 ~ 20 사이의 어떤 수로도 나누어 떨어지는 가장 작은 수는 얼마입니까?" };
-
-        public Problem0005() : base(5) { }
-
-        public override void Question()
-        {
-            PrintQuestion(kQuestion);
-        }
-
+        public Problem0005() : base(EProblemType.PROJECT_EULER, 5) { }
+        
         public override void Answer()
         {
             long answer = 0;

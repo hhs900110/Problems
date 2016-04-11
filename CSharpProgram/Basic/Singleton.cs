@@ -12,7 +12,7 @@ class Singleton<TClass>
     {
         get
         {
-            if (mInstance.Equals(null))
+            if ( mInstance == null )
             {
                 mInstance = new TClass();
             }

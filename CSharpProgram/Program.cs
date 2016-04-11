@@ -7,6 +7,8 @@ namespace CSharpProgram
     {
         static void Main(string[] args)
         {
+            Data.DataManager.DataLoad();
+
             Problem.IProblemMain problemMain = new Problem.ProblemManager();
 
             problemMain.PrintQuestionAndAnswer();

@@ -5,18 +5,8 @@ namespace Problem.ProjectEuler
 {
     class Problem0004 : Problem
     {
-        private readonly string[] kQuestion = new string[] {
-            "앞에서부터 읽을 때나 뒤에서부터 읽을 때나 모양이 같은 수를 대칭수(palindrome)라고 부릅니다.",
-            "두 자리 수를 곱해 만들 수 있는 대칭수 중 가장 큰 수는 9009 (= 91 × 99) 입니다.",
-            "세 자리 수를 곱해 만들 수 있는 가장 큰 대칭수는 얼마입니까?" };
-
-        public Problem0004() : base(4) { }
-
-        public override void Question()
-        {
-            PrintQuestion(kQuestion);
-        }
-
+        public Problem0004() : base(EProblemType.PROJECT_EULER, 4) { }
+        
         public override void Answer()
         {
             int answer = 0;

@@ -16,7 +16,7 @@ namespace Data.Table
 
         protected void LoadFromFile(string xmlFileName)
         {
-            if (mDicData.Equals(null)) { mDicData = new Dictionary<int, TDataType>(); m_bCompleteLoad = false; }
+            if (mDicData == null) { mDicData = new Dictionary<int, TDataType>(); m_bCompleteLoad = false; }
             if (m_bCompleteLoad.Equals(true)) { return; }
             mDicData.Clear();
 
@@ -35,7 +35,7 @@ namespace Data.Table
             return true;
         }
 
-        protected TDataType GetDataByIndex(int pIndex)
+        public TDataType GetDataByIndex(int pIndex)
         {
             if (mDicData.ContainsKey(pIndex))
             {

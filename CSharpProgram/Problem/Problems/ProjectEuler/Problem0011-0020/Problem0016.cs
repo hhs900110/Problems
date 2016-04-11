@@ -5,17 +5,8 @@ namespace Problem.ProjectEuler
 {
     class Problem0016 : Problem
     {
-        private readonly string[] kQuestion = new string[] {
-            "2^15 = 32768 의 각 자리수를 더하면 3 + 2 + 7 + 6 + 8 = 26 입니다.",
-            "2^1000의 각 자리수를 모두 더하면 얼마입니까?" };
-
-        public Problem0016() : base(16) { }
-
-        public override void Question()
-        {
-            PrintQuestion(kQuestion);
-        }
-
+        public Problem0016() : base(EProblemType.PROJECT_EULER, 16) { }
+        
         public override void Answer()
         {
             ulong answer = Find(2, 1000);

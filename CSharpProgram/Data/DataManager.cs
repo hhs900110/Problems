@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace Data
 {
-    class DataManager
+    public class DataManager
     {
         public static void DataLoad()
         {
             Singleton<Table.PizzaDataTable>.Instance.LoadFromFile();
+            Singleton<Table.ProjectEulerDataTable>.Instance.LoadFromFile();
         }
     }
 }
