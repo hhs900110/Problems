@@ -80,50 +80,6 @@ class Calculator
     public static bool IsFactorize(ulong pTarget)
     {
         return FactorizeCompute.IsFactorize(pTarget);
-
-        /*
-        // 음수가 아니고 2보다 작으면 소수가 아니다.
-        if (pTarget < 2) { return false; }
-
-        for (int i = 2; i <= 3; ++i)
-        {
-            // 2 또는 3으로 나뉘어지는지 체크
-            if (pTarget % i == 0)
-            {
-                if (pTarget.Equals(i)) {return true; } // 2 또는 3 이면 소수이다.
-                else { return false; } // 2 또는 3 이 아니면 소수가 아니다.
-            }
-        }
-
-        ulong plus = (pTarget + 1) % 6;
-        ulong minus = (pTarget - 1) % 6;
-
-        if (plus.Equals(0) || minus.Equals(0))
-        {
-            double maxValue = Math.Sqrt(pTarget);
-            ulong count = 0;
-
-            do
-            {
-                count++;
-                plus = 6 * count + 1;
-                minus = 6 * count - 1;
-
-                if (pTarget.Equals(plus) || pTarget.Equals(minus))
-                    return true;
-
-                if (pTarget % plus == 0)
-                {
-                    return false;
-                }
-                if (pTarget % minus == 0)
-                {
-                    return false;
-                }
-            } while (minus <= pTarget);
-        }
-        */
-        return true;
     }
 
     public static List<ulong> FactorizeList(ulong minRange, ulong maxRange)

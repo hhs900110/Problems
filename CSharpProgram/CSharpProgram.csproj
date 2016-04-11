@@ -47,12 +47,11 @@
     <Compile Include="Basic\Singleton.cs" />
     <Compile Include="Basic\SyncTime.cs" />
     <Compile Include="Basic\TimeProfiler.cs" />
+    <Compile Include="Basic\Unit\DivisionUnit.cs" />
     <Compile Include="Data\DataManager.cs" />
     <Compile Include="Data\Table\DataTableBase.cs" />
     <Compile Include="Data\Table\PizzaDataTable.cs" />
     <Compile Include="Data\Loader\XmlSwitcher.cs" />
-    <Compile Include="Food\Food.cs" />
-    <Compile Include="Food\Pizza.cs" />
     <Compile Include="Problem\EProblemType.cs" />
     <Compile Include="Problem\Problems\CodingDojang\CodingDojangMain.cs" />
     <Compile Include="Problem\ProblemManager.cs" />
@@ -88,6 +87,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Food\" />
     <Folder Include="Interface\" />
   </ItemGroup>
   <ItemGroup>
