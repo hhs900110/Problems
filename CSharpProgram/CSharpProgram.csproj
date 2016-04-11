@@ -52,8 +52,8 @@
     <Compile Include="Data\Table\DataTableBase.cs" />
     <Compile Include="Data\Table\PizzaDataTable.cs" />
     <Compile Include="Data\Loader\XmlSwitcher.cs" />
-    <Compile Include="Data\Table\Project\SProblemDataUnit.cs" />
-    <Compile Include="Data\Table\Project\ProjectEulerDataTable.cs" />
+    <Compile Include="Data\Table\Problem\SProblemDataUnit.cs" />
+    <Compile Include="Data\Table\Problem\ProjectEulerDataTable.cs" />
     <Compile Include="Problem\EProblemType.cs" />
     <Compile Include="Problem\Problems\CodingDojang\CodingDojangMain.cs" />
     <Compile Include="Problem\ProblemManager.cs" />
