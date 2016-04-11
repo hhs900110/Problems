@@ -5,7 +5,9 @@ namespace Problem.ProjectEuler
 {
     class Problem0007 : Problem
     {
-        private readonly string kQuestion = "소수를 크기 순으로 나열하면 2, 3, 5, 7, 11, 13, ... 과 같이 됩니다.\n이 때 10,001번째의 소수를 구하세요.";
+        private readonly string[] kQuestion = new string[] {
+            "소수를 크기 순으로 나열하면 2, 3, 5, 7, 11, 13, ... 과 같이 됩니다.",
+            "이 때 10,001번째의 소수를 구하세요." };
 
         public Problem0007() : base(7) { }
 
@@ -34,7 +36,7 @@ namespace Problem.ProjectEuler
 
                 if (FactoList.Count >= num)
                 {
-                    returnValue = FactoList[(int)num-1];
+                    returnValue = FactoList[(int)num - 1];
                 }
                 ++checkCount;
             }

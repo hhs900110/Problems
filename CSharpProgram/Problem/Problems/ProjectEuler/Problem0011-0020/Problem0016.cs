@@ -5,7 +5,9 @@ namespace Problem.ProjectEuler
 {
     class Problem0016 : Problem
     {
-        private readonly string kQuestion = "2^15 = 32768 의 각 자리수를 더하면 3 + 2 + 7 + 6 + 8 = 26 입니다.\n2^1000의 각 자리수를 모두 더하면 얼마입니까?";
+        private readonly string[] kQuestion = new string[] {
+            "2^15 = 32768 의 각 자리수를 더하면 3 + 2 + 7 + 6 + 8 = 26 입니다.",
+            "2^1000의 각 자리수를 모두 더하면 얼마입니까?" };
 
         public Problem0016() : base(16) { }
 
@@ -37,9 +39,9 @@ namespace Problem.ProjectEuler
                     uint setNum = powList[j] * targetNum + overNum;
                     overNum = 0;
 
-                    if(setNum >= 10)
+                    if (setNum >= 10)
                     {
-                        if (powList.Count <= j+1)
+                        if (powList.Count <= j + 1)
                         {
                             powList.Add(0);
                         }

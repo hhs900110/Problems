@@ -19,6 +19,24 @@ namespace Problem
             Console.WriteLine(string.Format("No.{0} Q]\n\n{1}\n", m_ProblemNum.ToString("0000"), pQuestion));
         }
 
+        protected void PrintQuestion(string[] pQuestion)
+        {
+            string question = "";
+
+            for (int i = 0; i < pQuestion.Length; ++i)
+            {
+                if (i == 0)
+                {
+                    question += pQuestion[i];
+                }
+                else
+                {
+                    question += "\n" + pQuestion[i];
+                }
+            }
+            PrintQuestion(question);
+        }
+
         protected void PrintAnswer(string pAnswer)
         {
             Console.WriteLine(string.Format("No.{0} A] {1}\n", m_ProblemNum.ToString("0000"), pAnswer));
