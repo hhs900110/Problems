@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A735A28B-B212-45FA-81C2-A70833DE11E3}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CSharpProgram</RootNamespace>
+    <AssemblyName>CSharpProgram</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Basic\Calculator.cs" />
+    <Compile Include="Basic\Debugger.cs" />
+    <Compile Include="Basic\Factorize\FactorizeCompute.cs" />
+    <Compile Include="Basic\Singleton.cs" />
+    <Compile Include="Basic\SyncTime.cs" />
+    <Compile Include="Basic\TimeProfiler.cs" />
+    <Compile Include="Data\DataManager.cs" />
+    <Compile Include="Data\Table\DataTableBase.cs" />
+    <Compile Include="Data\Table\PizzaDataTable.cs" />
+    <Compile Include="Data\Loader\XmlSwitcher.cs" />
+    <Compile Include="Food\Food.cs" />
+    <Compile Include="Food\Pizza.cs" />
+    <Compile Include="Problem\EProblemType.cs" />
+    <Compile Include="Problem\Problems\CodingDojang\CodingDojangMain.cs" />
+    <Compile Include="Problem\ProblemManager.cs" />
+    <Compile Include="Problem\ProblemBase\IProblem.cs" />
+    <Compile Include="Problem\ProblemMainBase\IProblemMain.cs" />
+    <Compile Include="Problem\ProblemMainBase\ProblemMain.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Problem\ProblemBase\Problem.cs" />
+    <Compile Include="Problem\Problems\ProjectEuler\Problem0001-0010\Problem0001.cs" />
+    <Compile Include="Problem\Problems\ProjectEuler\Problem0001-0010\Problem0002.cs" />
+    <Compile Include="Problem\Problems\ProjectEuler\Problem0001-0010\Problem0003.cs" />
+    <Compile Include="Problem\Problems\ProjectEuler\Problem0001-0010\Problem0004.cs" />
+    <Compile Include="Problem\Problems\ProjectEuler\Problem0001-0010\Problem0005.cs" />
+    <Compile Include="Problem\Problems\ProjectEuler\Problem0001-0010\Problem0006.cs" />
+    <Compile Include="Problem\Problems\ProjectEuler\Problem0001-0010\Problem0007.cs" />
+    <Compile Include="Problem\Problems\ProjectEuler\Problem0001-0010\Problem0008.cs" />
+    <Compile Include="Problem\Problems\ProjectEuler\Problem0001-0010\Problem0009.cs" />
+    <Compile Include="Problem\Problems\ProjectEuler\Problem0001-0010\Problem0010.cs" />
+    <Compile Include="Problem\Problems\ProjectEuler\Problem0011-0020\Problem0011.cs" />
+    <Compile Include="Problem\Problems\ProjectEuler\Problem0011-0020\Problem0012.cs" />
+    <Compile Include="Problem\Problems\ProjectEuler\Problem0011-0020\Problem0013.cs" />
+    <Compile Include="Problem\Problems\ProjectEuler\Problem0011-0020\Problem0014.cs" />
+    <Compile Include="Problem\Problems\ProjectEuler\Problem0011-0020\Problem0015.cs" />
+    <Compile Include="Problem\Problems\ProjectEuler\Problem0011-0020\Problem0016.cs" />
+    <Compile Include="Problem\Problems\ProjectEuler\Problem0011-0020\Problem0017.cs" />
+    <Compile Include="Problem\Problems\ProjectEuler\Problem0011-0020\Problem0018.cs" />
+    <Compile Include="Problem\Problems\ProjectEuler\Problem0011-0020\Problem0019.cs" />
+    <Compile Include="Problem\Problems\ProjectEuler\Problem0011-0020\Problem0020.cs" />
+    <Compile Include="Problem\Problems\ProjectEuler\ProjectEulerMain.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Interface\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\Xml\PizzaData.xml">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

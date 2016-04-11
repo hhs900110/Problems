@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<n PizzaIndex="0" PizzaName="Peperoni" PizzaPrice ="5000"/>
+	<n PizzaIndex="1" PizzaName="Potato" PizzaPrice ="6000"/>
+	<n PizzaIndex="2" PizzaName="Cheese" PizzaPrice ="7000"/>
+	<n PizzaIndex="3" PizzaName="Shrimp" PizzaPrice ="8000"/>
+</root>
