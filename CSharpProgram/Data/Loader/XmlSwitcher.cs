@@ -206,7 +206,7 @@ public class XMLSwitcher
         {
             if (xmlRead.AttributeCount > 0) // 안의 값이 있는지 확인
             {
-                if (xmlRead.Name.Equals("root")) { return false; } // root는 패스시킴. (안하려면 이 함수 처리를 밖에서 해야함)
+                if (xmlRead.Name.Contains("root")) { return false; } // root는 패스시킴. (안하려면 이 함수 처리를 밖에서 해야함)
                 else
                 {
                     return true;

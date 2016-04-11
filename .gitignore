@@ -1,6 +1,7 @@
 ﻿#ignore directories.
 .svn/
 .git/
+.vs/
 
 CSharpProgram/bin
 CSharpProgram/obj

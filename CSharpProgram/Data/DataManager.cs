@@ -10,7 +10,7 @@ namespace Data
     {
         public static void DataLoad()
         {
-            Singleton<Table.PizzaDataTable>.Instance.LoadFromFile();
+            //Singleton<Table.PizzaDataTable>.Instance.LoadFromFile();
             Singleton<Table.ProjectEulerDataTable>.Instance.LoadFromFile();
         }
     }
