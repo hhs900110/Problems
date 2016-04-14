@@ -3,5 +3,7 @@
 .git/
 .vs/
 
+*.csproj
+
 CSharpProgram/bin
 CSharpProgram/obj
