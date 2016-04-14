@@ -61,6 +61,16 @@
     <Compile Include="Problem\ProblemBase\IProblem.cs" />
     <Compile Include="Problem\ProblemMainBase\IProblemMain.cs" />
     <Compile Include="Problem\ProblemMainBase\ProblemMain.cs" />
+    <Compile Include="Problem\Problems\ProjectEuler\Problem0021-0030\Problem0021.cs" />
+    <Compile Include="Problem\Problems\ProjectEuler\Problem0021-0030\Problem0022.cs" />
+    <Compile Include="Problem\Problems\ProjectEuler\Problem0021-0030\Problem0023.cs" />
+    <Compile Include="Problem\Problems\ProjectEuler\Problem0021-0030\Problem0024.cs" />
+    <Compile Include="Problem\Problems\ProjectEuler\Problem0021-0030\Problem0025.cs" />
+    <Compile Include="Problem\Problems\ProjectEuler\Problem0021-0030\Problem0026.cs" />
+    <Compile Include="Problem\Problems\ProjectEuler\Problem0021-0030\Problem0027.cs" />
+    <Compile Include="Problem\Problems\ProjectEuler\Problem0021-0030\Problem0028.cs" />
+    <Compile Include="Problem\Problems\ProjectEuler\Problem0021-0030\Problem0029.cs" />
+    <Compile Include="Problem\Problems\ProjectEuler\Problem0021-0030\Problem0030.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Problem\ProblemBase\Problem.cs" />
     <Compile Include="Problem\Problems\ProjectEuler\Problem0001-0010\Problem0001.cs" />
