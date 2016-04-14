@@ -76,6 +76,43 @@ class Calculator
         return returnList;
     }
 
+    public static bool IsFriendNumber(long pTarget1, long pTarget2)
+    {
+        List<long> lstFactorization1 = Divisor(pTarget1);
+        long factoSum1 = 0;
+
+        for ( int i = 0; i < lstFactorization1.Count; ++i )
+        {
+            if ( lstFactorization1[i] != pTarget1 )
+            {
+                factoSum1 += lstFactorization1[i];
+            }
+        }
+
+        if ( factoSum1 != pTarget2 )
+        {
+            return false;
+        }
+
+        List<long> lstFactorization2 = Divisor(pTarget2);
+        long factoSum2 = 0;
+
+        for ( int i = 0; i < lstFactorization2.Count; ++i )
+        {
+            if ( lstFactorization2[i] != pTarget2 )
+            {
+                factoSum2 += lstFactorization2[i];
+            }
+        }
+
+        if ( factoSum2 != pTarget1 )
+        {
+            return false;
+        }
+
+        return true;
+    }
+
     /// <summary> Target 이 소수인지 체크 </summary>
     public static bool IsFactorize(ulong pTarget)
     {
