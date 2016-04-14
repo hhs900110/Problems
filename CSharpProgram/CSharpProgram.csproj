@@ -48,6 +48,7 @@
     <Compile Include="Basic\SyncTime.cs" />
     <Compile Include="Basic\TimeProfiler.cs" />
     <Compile Include="Basic\Unit\DivisionUnit.cs" />
+    <Compile Include="Basic\Unit\LargeInt.cs" />
     <Compile Include="Data\DataManager.cs" />
     <Compile Include="Data\Table\DataTableBase.cs" />
     <Compile Include="Data\Table\PizzaDataTable.cs" />
