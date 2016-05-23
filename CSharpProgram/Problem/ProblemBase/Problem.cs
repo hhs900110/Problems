@@ -15,16 +15,17 @@ namespace Problem
 
         public void Question()
         {
-            Data.Table.SProblemDataUnit dataUnit = new Data.Table.SProblemDataUnit();
+            Data.Unit.ProjectEulerDBUnit dataUnit = new Data.Unit.ProjectEulerDBUnit();
 
             switch ( mProblemType )
             {
                 case EProblemType.PROJECT_EULER:
-                    dataUnit = Singleton<Data.Table.ProjectEulerDataTable>.Instance.GetDataByIndex(mProblemNum);
+
+                    dataUnit = Singleton<MongoDBUtil.MongoDBManager>.Instance.ProjectEulerDB.GetDataByIndex(mProblemNum);
                     break;
             }
 
-            Console.WriteLine(string.Format("No.{0} Q] {1}\n\n{2}\n", dataUnit.ProblemIndex.ToString("0000"), dataUnit.ProblemTitle, dataUnit.ProblemQuestion));
+            Console.WriteLine(string.Format("No.{0} Q] {1}\n\n{2}\n", dataUnit.index.ToString("0000"), dataUnit.title, dataUnit.question));
         }
 
         public abstract void Answer();
