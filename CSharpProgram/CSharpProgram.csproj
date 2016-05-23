@@ -79,7 +79,11 @@
     <Compile Include="Data\Loader\XmlSwitcher.cs" />
     <Compile Include="Data\Table\Problem\SProblemDataUnit.cs" />
     <Compile Include="Data\Table\Problem\ProjectEulerDataTable.cs" />
-    <Compile Include="MongoDB\MongoDBMain.cs" />
+    <Compile Include="MongoDB\DataTable\DBManagerBase.cs" />
+    <Compile Include="MongoDB\DataTable\ProjectEulerDBManager.cs" />
+    <Compile Include="MongoDB\DataUnit\IDBUnitBase.cs" />
+    <Compile Include="MongoDB\DataUnit\ProjectEulerDBUnit.cs" />
+    <Compile Include="MongoDB\MongoDBManager.cs" />
     <Compile Include="Problem\EProblemType.cs" />
     <Compile Include="Problem\Problems\CodingDojang\CodingDojangMain.cs" />
     <Compile Include="Problem\ProblemManager.cs" />

@@ -5,12 +5,12 @@ using System.Xml;
 namespace Data.Table
 {
     abstract class DataTableBase<TDataType> : IXmlParse
-        where TDataType : struct, IDataBase
+        where TDataType : class, IDataBase, new()
     {
         //파일로딩완료되었는지를 나타내는 식별자
         private bool m_bCompleteLoad = false;
 
-        private Dictionary<int, TDataType> mDicData;
+        public Dictionary<int, TDataType> mDicData;
 
         public abstract void LoadFromFile();
 

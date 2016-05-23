@@ -4,7 +4,7 @@ using System.Xml;
 
 namespace Data.Table
 {
-    struct SPizzaData : IDataBase
+    class SPizzaData : IDataBase
     {
         private int mPizzaIndex;
         private string mPizzaName;
