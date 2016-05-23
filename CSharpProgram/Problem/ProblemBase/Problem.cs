@@ -1,4 +1,5 @@
 ﻿using System;
+using Data.Unit;
 
 namespace Problem
 {
@@ -15,13 +16,13 @@ namespace Problem
 
         public void Question()
         {
-            Data.Unit.ProjectEulerDBUnit dataUnit = new Data.Unit.ProjectEulerDBUnit();
+            ProjectEulerDBUnit dataUnit = new ProjectEulerDBUnit();
 
             switch ( mProblemType )
             {
                 case EProblemType.PROJECT_EULER:
-
-                    dataUnit = Singleton<MongoDBUtil.MongoDBManager>.Instance.ProjectEulerDB.GetDataByIndex(mProblemNum);
+                    Data.Manager.IDBManager dbManager = Singleton<Data.DBManager>.Instance.GetDBManager(Data.DataType.ProjectEuler);
+                    dataUnit = (ProjectEulerDBUnit)dbManager.GetDataByIndex(mProblemNum);
                     break;
             }
 

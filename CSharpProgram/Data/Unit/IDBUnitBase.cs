@@ -1,6 +1,5 @@
 ﻿using System;
-using MongoDB.Bson;
-using MongoDB.Driver;
+using System.Xml;
 
 namespace Data.Unit
 {
@@ -9,5 +8,6 @@ namespace Data.Unit
     {
         int Index();
         string ToString();
+        void SetData(XmlReader xmlRead);
     }
 }

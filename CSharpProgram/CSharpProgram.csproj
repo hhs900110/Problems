@@ -73,17 +73,20 @@
     <Compile Include="Basic\Unit\DivisionUnit.cs" />
     <Compile Include="Basic\Unit\LargeInt.cs" />
     <Compile Include="Basic\Unit\TriTree\TriTree.cs" />
-    <Compile Include="Data\DataManager.cs" />
-    <Compile Include="Data\Table\DataTableBase.cs" />
-    <Compile Include="Data\Table\PizzaDataTable.cs" />
+    <Compile Include="Data\DBManager.cs" />
+    <Compile Include="Data\Manager\IDBManager.cs" />
+    <Compile Include="Data\Manager\Root\DBManagerBase.cs" />
+    <Compile Include="Data\Manager\XML\DBManagerBase.cs" />
+    <Compile Include="Data\Manager\XML\PizzaDBManager.cs" />
     <Compile Include="Data\Loader\XmlSwitcher.cs" />
-    <Compile Include="Data\Table\Problem\SProblemDataUnit.cs" />
-    <Compile Include="Data\Table\Problem\ProjectEulerDataTable.cs" />
-    <Compile Include="MongoDB\DataTable\DBManagerBase.cs" />
-    <Compile Include="MongoDB\DataTable\ProjectEulerDBManager.cs" />
-    <Compile Include="MongoDB\DataUnit\IDBUnitBase.cs" />
-    <Compile Include="MongoDB\DataUnit\ProjectEulerDBUnit.cs" />
-    <Compile Include="MongoDB\MongoDBManager.cs" />
+    <Compile Include="Data\Manager\XML\ProjectEulerDBManager.cs" />
+    <Compile Include="Data\Manager\MongoDB\DBManagerBase.cs" />
+    <Compile Include="Data\Manager\MongoDB\ProjectEulerDBManager.cs" />
+    <Compile Include="Data\Manager\Root\XmlDBManager.cs" />
+    <Compile Include="Data\Unit\IDBUnitBase.cs" />
+    <Compile Include="Data\Unit\PizzaDBUnit.cs" />
+    <Compile Include="Data\Unit\ProjectEulerDBUnit.cs" />
+    <Compile Include="Data\Manager\Root\MongoDBManager.cs" />
     <Compile Include="Problem\EProblemType.cs" />
     <Compile Include="Problem\Problems\CodingDojang\CodingDojangMain.cs" />
     <Compile Include="Problem\ProblemManager.cs" />
@@ -128,15 +131,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Food\" />
-    <Folder Include="Interface\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Data\Xml\PizzaData.xml">
+    <Content Include="Data\XmlData\PizzaData.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Data\Xml\ProjectEuler.xml" />
+    <Content Include="Data\XmlData\ProjectEuler.xml" />
     <Content Include="DLL\MongoDB.Bson.dll" />
     <Content Include="DLL\MongoDB.Driver.dll" />
   </ItemGroup>

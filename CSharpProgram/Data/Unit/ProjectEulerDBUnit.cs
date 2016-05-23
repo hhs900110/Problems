@@ -1,23 +1,32 @@
 ﻿using System;
 using System.Xml;
+using MongoDB.Bson;
 
-namespace Data.Table
+namespace Data.Unit
 {
-    public class SProblemDataUnit : IDataBase
+    class ProjectEulerDBUnit : IDBUnitBase
     {
-        public int Index() { return index; }
-        public string ProblemTitle() { return title; }
-        public string ProblemQuestion() { return question; }
-
+        public ObjectId _id { get; set; }
         public int index { get; set; }
         public string title { get; set; }
         public string question { get; set; }
+
+        public int Index()
+        {
+            return index;
+        }
+
+        public override string ToString()
+        {
+            return string.Format("{0} {1} {2}", index, title, question);
+        }
 
         public void SetData(XmlReader xmlRead)
         {
             int mProblemIndex;
             string mProblemTitle;
             string mProblemQuestion;
+
             XMLSwitcher.TryParse(xmlRead, "ProblemIndex", out mProblemIndex);
             XMLSwitcher.TryParse(xmlRead, "ProblemTitle", out mProblemTitle);
             XMLSwitcher.TryParse(xmlRead, "QuestionDetail", out mProblemQuestion);

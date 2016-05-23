@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using MongoDB.Driver.Builders;
+using Data.Manager.MongoDB;
 
-namespace MongoDBUtil
+namespace Data.Manager.MongoDB
 {
-    class MongoDBManager
+    class MongoDBManager : DBManagerBase
     {
         // Mongo DB를 위한 Connection String
         private readonly string connString = "mongodb://192.168.56.1:27017";
@@ -72,15 +73,11 @@ namespace MongoDBUtil
 
         public MongoDBManager()
         {
-        }
-
-        public void DataLoad()
-        {
-            ProjectEulerDB.LoadFromFile();
+            RegistDBManager(DataType.ProjectEuler, new ProjectEulerDBManager());
         }
 
         public void ConvertData<T>(string collectionName, Dictionary<int, T> dataTable)
-            where T : class, Data.Table.IDataBase, new()
+            where T : class, Data.Unit.IDBUnitBase, new()
         {
             // db 안에 collectionName의 컬렉션 (테이블) 가져오기. 만약 없으면 새로 생성.
             MongoCollection<T> customers = DBTable.GetCollection<T>(collectionName);

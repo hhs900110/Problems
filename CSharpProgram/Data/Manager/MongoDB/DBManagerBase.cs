@@ -5,16 +5,16 @@ using MongoDB.Driver;
 using MongoDB.Driver.Builders;
 using Data.Unit;
 
-namespace MongoDBUtil
+namespace Data.Manager.MongoDB
 {
-    abstract class DBManagerBase<TDataType>
+    abstract class DBManagerBase<TDataType> : IDBManager
         where TDataType : class, IDBUnitBase, new()
     {
         protected MongoCollection<TDataType> mDicData;
 
-        public abstract void LoadFromFile();
+        public abstract void LoadData();
 
-        protected void LoadFromDB(string dbName)
+        protected void LoadData(string dbName)
         {
             MongoDatabase DBTable = Singleton<MongoDBManager>.Instance.DBTable;
 
@@ -22,7 +22,7 @@ namespace MongoDBUtil
             mDicData = DBTable.GetCollection<TDataType>(dbName);
         }
 
-        public TDataType GetDataByIndex(int pIndex)
+        public object GetDataByIndex(int pIndex)
         {
             if (mDicData != null)
             {

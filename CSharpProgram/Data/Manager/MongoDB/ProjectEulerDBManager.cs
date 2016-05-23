@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using Data.Unit;
 
-namespace MongoDBUtil
+namespace Data.Manager.MongoDB
 {
     class ProjectEulerDBManager : DBManagerBase<ProjectEulerDBUnit>
     {
-        public override void LoadFromFile()
+        public override void LoadData()
         {
-            LoadFromDB("ProjectEuler");
+            LoadData("ProjectEuler");
         }
     }
 }

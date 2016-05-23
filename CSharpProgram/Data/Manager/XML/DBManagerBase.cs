@@ -1,20 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Xml;
+using Data.Unit;
 
-namespace Data.Table
+namespace Data.Manager.XML
 {
-    abstract class DataTableBase<TDataType> : IXmlParse
-        where TDataType : class, IDataBase, new()
+    abstract class DBManagerBase<TDataType> : IDBManager, IXmlParse
+        where TDataType : class, IDBUnitBase, new()
     {
         //파일로딩완료되었는지를 나타내는 식별자
         private bool m_bCompleteLoad = false;
 
         public Dictionary<int, TDataType> mDicData;
 
-        public abstract void LoadFromFile();
+        public abstract void LoadData();
 
-        protected void LoadFromFile(string xmlFileName)
+        protected void LoadData(string xmlFileName)
         {
             if (mDicData == null) { mDicData = new Dictionary<int, TDataType>(); m_bCompleteLoad = false; }
             if (m_bCompleteLoad.Equals(true)) { return; }
@@ -35,7 +36,7 @@ namespace Data.Table
             return true;
         }
 
-        public TDataType GetDataByIndex(int pIndex)
+        public object GetDataByIndex(int pIndex)
         {
             if (mDicData.ContainsKey(pIndex))
             {
@@ -43,11 +44,5 @@ namespace Data.Table
             }
             return new TDataType();
         }
-    }
-
-    interface IDataBase
-    {
-        void SetData(XmlReader xmlRead);
-        int Index();
     }
 }

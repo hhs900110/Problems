@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Xml;
 
-namespace Data.Table
+namespace Data.Unit
 {
-    class SPizzaData : IDataBase
+    class PizzaDBUnit : IDBUnitBase
     {
         private int mPizzaIndex;
         private string mPizzaName;
@@ -21,14 +20,6 @@ namespace Data.Table
             XMLSwitcher.TryParse(xmlRead, "PizzaIndex", out mPizzaIndex);
             XMLSwitcher.TryParse(xmlRead, "PizzaName", out mPizzaName);
             XMLSwitcher.TryParse(xmlRead, "PizzaPrice", out mPizzaPrice);
-        }
-    }
-
-    sealed class PizzaDataTable : DataTableBase<SPizzaData>
-    {
-        public override void LoadFromFile()
-        {
-            base.LoadFromFile("PizzaData");
         }
     }
 }
