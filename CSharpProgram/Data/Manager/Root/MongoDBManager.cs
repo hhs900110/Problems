@@ -7,10 +7,10 @@ using Data.Manager.MongoDB;
 
 namespace Data.Manager.MongoDB
 {
-    class MongoDBManager : DBManagerBase
+    class MongoDBManager : RootDBManagerBase
     {
         // Mongo DB를 위한 Connection String
-        private readonly string connString = "mongodb://192.168.56.1:27017";
+        private readonly string connString = "mongodb://211.59.204.199:27017";
 
         #region MongoDB
         private MongoClient m_dbClient;
@@ -56,20 +56,6 @@ namespace Data.Manager.MongoDB
             }
         }
         #endregion
-
-        private ProjectEulerDBManager scriptProjectEulerDB;
-
-        public ProjectEulerDBManager ProjectEulerDB
-        {
-            get
-            {
-                if (scriptProjectEulerDB == null)
-                {
-                    scriptProjectEulerDB = new ProjectEulerDBManager();
-                }
-                return scriptProjectEulerDB;
-            }
-        }
 
         public MongoDBManager()
         {
@@ -171,5 +157,4 @@ namespace Data.Manager.MongoDB
             ////customers.Remove(qry);
         }
     }
-
 }

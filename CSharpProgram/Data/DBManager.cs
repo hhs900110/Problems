@@ -18,12 +18,14 @@ namespace Data
         public void DataLoad()
         {
             mongoDBMng.LoadData();
-            xmlDBMng.LoadData();
+            //xmlDBMng.LoadData();
+
+            //xmlDBMng.ConvertToMongoDB(mongoDBMng);
         }
 
-        public Data.Manager.IDBManager GetDBManager(DataType type)
+        public IDBManager GetDBManager(DataType type)
         {
-            Data.Manager.IDBManager dbManager = mongoDBMng.GetDBManager(type);
+            IDBManager dbManager = mongoDBMng.GetDBManager(type);
             if (dbManager == null)
             {
                 dbManager = xmlDBMng.GetDBManager(type);

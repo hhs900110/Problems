@@ -21,7 +21,7 @@ namespace Problem
             switch ( mProblemType )
             {
                 case EProblemType.PROJECT_EULER:
-                    Data.Manager.IDBManager dbManager = Singleton<Data.DBManager>.Instance.GetDBManager(Data.DataType.ProjectEuler);
+                    Data.IDBManager dbManager = Singleton<Data.DBManager>.Instance.GetDBManager(Data.DataType.ProjectEuler);
                     dataUnit = (ProjectEulerDBUnit)dbManager.GetDataByIndex(mProblemNum);
                     break;
             }

@@ -61,7 +61,7 @@ public class XMLSwitcher
     Application.temporaryCachePath	: /var/mobile/Applications/프로그램ID/Library/Caches
     */
 
-    public static string ASSET_PATH = "..\\..\\Data\\Xml\\";
+    public static string ASSET_PATH = "..\\..\\Resource\\Xml\\";
     public const short kLoadCountReader = 2000;
 
     public static IEnumerator AsyncFileLoading(string strFilePath, System.Action<MemoryStream> result = null)

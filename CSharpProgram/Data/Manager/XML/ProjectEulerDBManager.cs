@@ -7,9 +7,6 @@ namespace Data.Manager.XML
 {
     sealed class ProjectEulerDBManager : DBManagerBase<ProjectEulerDBUnit>
     {
-        public override void LoadData()
-        {
-            base.LoadData("ProjectEuler");
-        }
+        public ProjectEulerDBManager() : base("ProjectEuler") { }
     }
 }

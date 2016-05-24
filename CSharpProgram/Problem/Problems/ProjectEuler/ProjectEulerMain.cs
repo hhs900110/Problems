@@ -8,6 +8,8 @@ namespace Problem.ProjectEuler
         {
             List<IProblem> problem = new List<IProblem>(2);
 
+            problem.Add(new Problem0001());
+
             return problem;
         }
     }

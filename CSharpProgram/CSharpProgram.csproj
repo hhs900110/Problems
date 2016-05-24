@@ -74,8 +74,9 @@
     <Compile Include="Basic\Unit\LargeInt.cs" />
     <Compile Include="Basic\Unit\TriTree\TriTree.cs" />
     <Compile Include="Data\DBManager.cs" />
-    <Compile Include="Data\Manager\IDBManager.cs" />
-    <Compile Include="Data\Manager\Root\DBManagerBase.cs" />
+    <Compile Include="Data\Manager\IConvertMongoDB.cs" />
+    <Compile Include="Data\IDBManager.cs" />
+    <Compile Include="Data\Manager\Root\RootDBManagerBase.cs" />
     <Compile Include="Data\Manager\XML\DBManagerBase.cs" />
     <Compile Include="Data\Manager\XML\PizzaDBManager.cs" />
     <Compile Include="Data\Loader\XmlSwitcher.cs" />

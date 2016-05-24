@@ -4,30 +4,30 @@ using Data.Unit;
 
 namespace Data.Manager
 {
-    class DBManagerBase
+    class RootDBManagerBase
     {
-        private Dictionary<DataType, IDBManager> m_dbList;
+        private Dictionary<DataType, object> m_dbList;
 
-        private Dictionary<DataType, IDBManager> DBList
+        protected Dictionary<DataType, object> DBList
         {
             get
             {
                 if (m_dbList == null)
-                    m_dbList = new Dictionary<DataType, IDBManager>();
+                    m_dbList = new Dictionary<DataType, object>();
                 return m_dbList;
             }
         }
 
-        protected void RegistDBManager(DataType type, IDBManager manager)
+        protected void RegistDBManager(DataType type, object manager)
         {
             DBList.Add(type, manager);
         }
 
         public void LoadData()
         {
-            foreach (KeyValuePair<DataType, IDBManager> pair in DBList)
+            foreach (KeyValuePair<DataType, object> pair in DBList)
             {
-                pair.Value.LoadData();
+                ((IDBManager)pair.Value).LoadData();
             }
         }
 
@@ -35,7 +35,7 @@ namespace Data.Manager
         {
             if (DBList.ContainsKey(type))
             {
-                return DBList[type];
+                return (IDBManager)DBList[type];
             }
             return null;
         }

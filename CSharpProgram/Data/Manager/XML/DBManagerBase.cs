@@ -5,25 +5,40 @@ using Data.Unit;
 
 namespace Data.Manager.XML
 {
-    abstract class DBManagerBase<TDataType> : IDBManager, IXmlParse
+    abstract class DBManagerBase<TDataType> : IDBManager, IXmlParse, IConvertMongoDB
         where TDataType : class, IDBUnitBase, new()
     {
         //파일로딩완료되었는지를 나타내는 식별자
         private bool m_bCompleteLoad = false;
+        private Dictionary<int, TDataType> mDicData;
 
-        public Dictionary<int, TDataType> mDicData;
+        private string m_fileName = "";
 
-        public abstract void LoadData();
+        protected string FildName { get { return m_fileName; } }
 
-        protected void LoadData(string xmlFileName)
+        protected DBManagerBase(string fileName)
+        {
+            m_fileName = fileName;
+        }
+
+        public void LoadData()
         {
             if (mDicData == null) { mDicData = new Dictionary<int, TDataType>(); m_bCompleteLoad = false; }
             if (m_bCompleteLoad.Equals(true)) { return; }
             mDicData.Clear();
 
-            XMLSwitcher.LoadFromFile(xmlFileName, this);
+            XMLSwitcher.LoadFromFile(m_fileName, this);
 
             m_bCompleteLoad = true;
+        }
+
+        public object GetDataByIndex(int pIndex)
+        {
+            if (mDicData.ContainsKey(pIndex))
+            {
+                return mDicData[pIndex];
+            }
+            return new TDataType();
         }
 
         public bool ParseOne_Reader(XmlReader xmlRead)
@@ -36,13 +51,9 @@ namespace Data.Manager.XML
             return true;
         }
 
-        public object GetDataByIndex(int pIndex)
+        public void ConvertToMongoDB(MongoDB.MongoDBManager mongoDBMng)
         {
-            if (mDicData.ContainsKey(pIndex))
-            {
-                return mDicData[pIndex];
-            }
-            return new TDataType();
+            mongoDBMng.ConvertData<TDataType>(FildName, mDicData);
         }
     }
 }

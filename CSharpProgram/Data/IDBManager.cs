@@ -1,7 +1,7 @@
 ﻿using System;
 using Data.Unit;
 
-namespace Data.Manager
+namespace Data
 {
     public interface IDBManager
     {

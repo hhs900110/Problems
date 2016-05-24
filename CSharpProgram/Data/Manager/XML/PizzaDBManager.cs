@@ -7,9 +7,6 @@ namespace Data.Manager.XML
 {
     sealed class PizzaDBManager : DBManagerBase<PizzaDBUnit>
     {
-        public override void LoadData()
-        {
-            base.LoadData("PizzaData");
-        }
+        public PizzaDBManager() : base("PizzaData") { }
     }
 }
